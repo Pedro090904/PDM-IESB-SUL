@@ -14,8 +14,15 @@ export default function App() {
   
 
   function adicionarMetaHandler(inputMeta){
-    setMetas([...metas, inputMeta])
+    const novaMeta = {id: Math.random().toString(), texto: inputMeta};
+    setMetas([...metas, novaMeta]);
   };
+
+  function deletarMetaHandler(id){
+    console.log(id);
+    const novasMetas = metas.filter(meta => meta.id  !== id );
+    setMetas(novasMetas);
+  }
 
   
   return (
@@ -25,7 +32,9 @@ export default function App() {
      
 
       <View styles={styles.metaContainer}>
-        <MetaList array={metas} />
+        <MetaList array={metas} 
+          onDeleteItem = {deletarMetaHandler} 
+        />
       </View>
 
     </View>
