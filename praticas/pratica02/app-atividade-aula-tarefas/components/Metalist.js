@@ -1,37 +1,32 @@
 import { StyleSheet, ScrollView, Pressable, Text, View } from "react-native";
 
 function MetaList(props){
+    
     return(
-   
-    <ScrollView keyboardShouldPersistTaps="handled"> 
+    <ScrollView> 
 
         {props.array.map((meta) => {
-            return (
-                
-                <View key={meta.id} style={styles.itemContainer}> 
-                    <Pressable
-                        android_ripple={{color: '#ffeb3b'}} 
-                        onPress={() => props.onDeleteItem(meta.id)}
-                        style={styles.pressableArea} 
-                    >
-                        <Text>{meta.texto}</Text>
+            
+            return(
+                <View key={meta.id} style={styles.item}>
+                    <Pressable android_ripple={{color: 'yellow'}} key={meta.id} onePress={() => props.onDeleteItem(meta.id)}>
+                        <Text style={{padding: 10}}>
+                            {meta.texto}  
+                        </Text>
                     </Pressable>
                 </View>
             )
-        })}
-    
+            
+          }
+        )}
     </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
-    itemContainer: {
+    item: {
       margin: 8,
       borderRadius: 5,
-      overflow: 'hidden', // Super importante: impede que o 'ripple' quadrado vaze do botão arredondado!
-    },
-    pressableArea: {
-      padding: 10,
       backgroundColor: "lightblue",
     }
 })
