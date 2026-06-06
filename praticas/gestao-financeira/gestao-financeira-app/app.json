@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "gestao-financeira-app",
+    "slug": "gestao-financeira-app",
+    "version": "1.0.0",
+    "scheme": "gestaofinanceira",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "softwareKeyboardLayoutMode": "pan"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
